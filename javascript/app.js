@@ -27,7 +27,7 @@ const App = (function(UICtrl){
     document.querySelector(UISelectors.homeTab).addEventListener('click', tabClick);
     document.querySelector(UISelectors.jobsTab).addEventListener('click', tabClick);
     document.querySelector(UISelectors.lifeTab).addEventListener('click', tabClick);
-    document.querySelector(UISelectors.carousel).addEventListener('click', toast);
+    // document.querySelector(UISelectors.carousel).addEventListener('click', toast);
   } 
   const tabClick = function(e){
     UICtrl.resetTabs();
@@ -44,27 +44,19 @@ const App = (function(UICtrl){
     init: function(){
       // Load event listeners
       loadEventListeners();
-      
     }
   }
   
 })(UICtrl);
 
 document.addEventListener('DOMContentLoaded', function() {
-  const carouselElems = document.querySelectorAll('.carousel');
-  const carouselOptions = {
-    noWrap: false,
-    fullWidth: false
-  }
 
   const parallaxElems = document.querySelectorAll('.parallax');
   const parallaxOptions = {
     
   }
-
   const parallaxInstances = M.Parallax.init(parallaxElems, parallaxOptions);
-
-  const carouselInstances = M.Carousel.init(carouselElems, carouselOptions);
+  
 });
 
 App.init();
@@ -86,7 +78,6 @@ $(window).on('scroll', function () {
       offset = 0,
       calc = 1 - (scrollTop - offset) / height;
   
-  // console.log(calc);
   header.css({ 'opacity': calc });
   logoImage.css({ 'opacity': Math.abs(calc - 1)});
 
