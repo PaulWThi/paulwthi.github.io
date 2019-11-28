@@ -1,0 +1,67 @@
+a, p, h1, h2, h3, h4, h5, li, span {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+}
+
+.test-font {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: white;
+}
+
+#logo-image {
+  opacity: 0;
+}
+
+#navbar, #footer {
+  background-color: black;
+}
+
+#header {
+  height: 500px;
+  background-color: black;
+}
+
+#panel-side {
+  height: 1000px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: black;
+}
+
+.toast {
+    border-radius: 20px;
+    color: white;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+}
+
+.project {
+  font-size: 20px;
+}
+
+.valign-wrapper {
+  height: 100%;
+}
+
+#header-title {
+  width: 100%;
+}
+
+.parallax-container {
+  height: 250px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: white;
+}
+
+main {
+  flex: 1 0 auto;
+}
+    
