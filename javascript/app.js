@@ -40,7 +40,9 @@ const App = (function(UICtrl){
   }
 
   const toast = function(e){
-    M.toast({html: 'SUH!!', classes: 'toast', displayLength: 2000});
+    let suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'sup??', 'GANG GANG'];
+    let random = Math.floor(Math.random() * suhs.length); 
+    M.toast({html: suhs[random], classes: 'toast', displayLength: 2000});
     e.preventDefault();
   }
 
@@ -55,11 +57,17 @@ const App = (function(UICtrl){
 
 document.addEventListener('DOMContentLoaded', function() {
 
+  // parallax JS
   const parallaxElems = document.querySelectorAll('.parallax');
   const parallaxOptions = {
-    
   }
   const parallaxInstances = M.Parallax.init(parallaxElems, parallaxOptions);
+
+  // tooltip JS
+  const tooltipElems = document.querySelectorAll('.tooltipped');
+  const tooltipOptions = {
+  }
+  const tooltopInstances = M.Tooltip.init(tooltipElems, tooltipOptions);
   
 });
 
