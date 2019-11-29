@@ -3,7 +3,8 @@ const UICtrl = (function(){
     homeTab: '#home-tab',
     jobsTab: '#jobs-tab',
     lifeTab: '#life-tab',
-    carousel: '.carousel'
+    // carousel: '.carousel',
+    profilePic: '.profile-pic'
   }
 
   return {
@@ -24,10 +25,13 @@ const UICtrl = (function(){
 const App = (function(UICtrl){
   const UISelectors = UICtrl.getSelectors();
   const loadEventListeners = function(){
+    /*
     document.querySelector(UISelectors.homeTab).addEventListener('click', tabClick);
     document.querySelector(UISelectors.jobsTab).addEventListener('click', tabClick);
     document.querySelector(UISelectors.lifeTab).addEventListener('click', tabClick);
-    // document.querySelector(UISelectors.carousel).addEventListener('click', toast);
+    */
+    document.querySelector(UISelectors.profilePic).addEventListener('click', toast);
+    
   } 
   const tabClick = function(e){
     UICtrl.resetTabs();
@@ -36,7 +40,7 @@ const App = (function(UICtrl){
   }
 
   const toast = function(e){
-    M.toast({html: 'spinny spinny!', classes: 'toasty', displayLength: 2000});
+    M.toast({html: 'SUH!!', classes: 'toast', displayLength: 2000});
     e.preventDefault();
   }
 
@@ -68,6 +72,7 @@ $(document).ready(function() {
 });
 
 var header = $('#header');
+var greeting = $('#greeting');
 var logoImage = $("#logo-image");
 var headerHidden = false;
 
@@ -84,23 +89,28 @@ $(window).on('scroll', function () {
   headerHidden = calc < '0' ? true : false;
 });
 
-var emoji = ["🤗", "🤠", "😎"]
-var text = ["hello world", "howdy partner", "suh cuh"];
+var emoji = ["🤗🤗", "🤠🐎", "💯💯💯"]
+var text = ["Hello World!", "Howdy yall", "suuuh cuh"];
 var counter = 1;
 var headerTitle = $("#header-title");
 logoImage.html(emoji[0]);
-headerTitle.html(`${emoji[0]}  ${text[0]}`);
+greeting.html(text[0]);
+console.log(greeting);
+headerTitle.html(`${text[0]} ${emoji[0]}`);
 
 setInterval(change, 3000);
 function change() {
   if(!headerHidden) {
     logoImage.fadeOut();
+    greeting.fadeOut();
     headerTitle.fadeOut(function(){
       logoImage.html(emoji[counter]);
-      headerTitle.html(`${emoji[counter]} ${text[counter]}`);
+      greeting.html(text[counter]);
+      headerTitle.html(`${text[counter]} ${emoji[counter]}`);
           counter++;
           if(counter >= text.length) { counter = 0; }
           headerTitle.fadeIn();
+          greeting.fadeIn();
           logoImage.fadeIn();
       });
   }

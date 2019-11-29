@@ -12,27 +12,32 @@
   </head>
   
   <body>
+
     <div class="navbar-fixed">
-        <ul id="home-dropdown" class="dropdown-content">
-          <li><a href="#!">albany</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">dallas</a></li>
-        </ul>
-        <ul id="jobs-dropdown" class="dropdown-content">
-          <li><a href="#!">NY DTF</a></li>
-          <li><a href="#!">NY OTDA</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">Bottle Rocket</a></li>
-        </ul>
+      <!--
+      <ul id="home-dropdown" class="dropdown-content">
+        <li><a href="#!">albany</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">dallas</a></li>
+      </ul>
+      <ul id="jobs-dropdown" class="dropdown-content">
+        <li><a href="#!">NY DTF</a></li>
+        <li><a href="#!">NY OTDA</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Bottle Rocket</a></li>
+      </ul>
       <ul id="life-dropdown" class="dropdown-content">
         <li><a href="#!">colonie high school</a></li>
         <li><a href="#!">university at albany</a></li>
         <li><a href="#!">workforce</a></li>
       </ul>
+      -->
+      
       <nav id="navbar">
         <div class="nav-wrapper">
           <a id="logo-title" href="#" class="brand-logo center">Paul Thi</a>
           <a id="logo-image" href="#" class="brand-logo left"></a>
+          <!--
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a id="home-tab" class="tab dropdown-trigger" data-target="home-dropdown" href="#">
               home<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -41,10 +46,11 @@
             <li><a id="life-tab" class="tab dropdown-trigger" data-target="life-dropdown" href="#">
               life<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
+          -->
         </div>
       </nav>
     </div>
-
+    
     <div id="header">
       <div class="valign-wrapper">
         <h1 id="header-title" class="default-font white-text center-align"></h1>
@@ -55,29 +61,38 @@
       <div class="parallax"><img src="assets/nyc.jpg"></div>
     </div>
     <div class="section white">
-      <div class="row container">
-      <h2 class="header">Parallax</h2>
-      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
+      <div class="container">
+        <div class="row valign-wrapper">
+          <div class="col s12 m3 l3">
+            <img class="profile-pic circle" src="assets/profilesmile.png">
+          </div>
+          <div class="col s12 m9 l9">
+              <h2 id="greeting">Hey there!</h2>
+              <blockquote class="grey-text text-darken-3 lighten-3">
+              <p id="introdiction">I have an immense passion for learning. Whether it's a new fancy programming language, or how to chef up a mean bowl of pho, I always seek to improve myself and the people around me. Feel free to send me a message for any inquiries regarding my skillset, or maybe if you just want to have a nice chat, thats coo too.
+              </p>
+
+              <p id="introdiction">Enjoy the rest of your stay!!</p>
+              </blockquote>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="parallax-container">
       <div class="parallax"><img src="assets/valeriia.jpg"></div>
     </div>
 
-    <div id="filler" style="height:300px"></div>
-
     <div class="container">
       <div class="section">
           <h3>📂 Projects</h3>
           <div id="filler" style="height:25px"></div>
-          <p class="project">Projects > iOS</p>
+          <blockquote class="project">Projects > iOS</blockquote>
       </div>
       <div class="row">
         <div id="panel-body" class="col s12">
           <div class="col s12 m12 l12">
               <div class="card-panel blue-grey darken-1 white-text">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                <p>Shmunnnny gang!</p>
               </div>
           </div>
         </div>
@@ -90,44 +105,51 @@
       <div class="section">
           <h3>💸 Work Experience</h3>
           <div id="filler" style="height:25px"></div>
-          <p class="project">Work Experience > Bottle Rocket Studios</p>
+          <blockquote class="project">Work Experience > Bottle Rocket Studios</blockquote>
       </div>
       <div class="row">
-        <div id="panel-body" class="col s12">
-          <div class="col s12 m12 l12">
-            <div id="project-card" class="card medium blue-grey darken-1 z-depth-5">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
+        <div class="col s3 m3 l3">
+          <div class="card blue-grey lighten-1 large">
+            <div class="card-image">
+              <img class="company-logo" src="assets/brlogo.png">
+              <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+            </div>
+            <div class="card-content white-text">
+              <span class="card-title">iOS Developer</span>
+              <p>Bottle Rocket // Full-time</p>
+              <p>September 2019 - Present</p>
+              <p>Dallas, Texas</p>
+            </div>
+            <div class="card-action">
+              <a href="https://www.bottlerocketstudios.com/" target="_blank" class="">Visit us!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s9 m9 l9 ">
+          <div class="card large blue-grey darken-1">
+            <div class="card-content blue-grey darken-1">
+              <p class="white-text">● Developing and delivering some of the most popular and highly rated iOS Apps to the Apple Store.</p>
+              <p class="white-text">● Programming in Apple's newest native language: Swift.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="assets/nyc.jpg"></div>
+    <div class="container">
+      <div class="col s12 m7">
+          <h2 class="header">Leme give ya a smooth before you leave</h2>
+          <img id="kissy" src="assets/profilekissy.png"></img>
+      </div>
     </div>
-    <div class="section white">
-      <div class="row container">
-      <h2 class="header">Parallax</h2>
-      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="assets/valeriia.jpg"></div>
-    </div>
-
-    <div id="filler" style="height:300px"></div>
 
     <footer id="footer" class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Built using:</h5>
-            <p class="grey-text text-lighten-4">materialize</p>
+            <p class="grey-text text-lighten-4">gang gang</p>
+            <p class="grey-text text-lighten-4">gang gang</p>
           </div>
           <div class="col l4 offset-l2 s12">
             <ul>
@@ -140,7 +162,13 @@
           </div>
         </div>
       </div>
+      <div class="footer-copyright">
+          <div class="container">
+          © 2019 Paul Thi
+          </div>
+        </div>
     </footer>
+
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
