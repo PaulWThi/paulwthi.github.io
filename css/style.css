@@ -1,34 +1,143 @@
-#introdiction {
+#introduction {
   font-size: 15px;
+  font-weight: lighter;
 }
 
-.test-font {
-  font-family: 'Times New Roman', Times, serif;
+.default-grey-text {
+  color: #4d4045;
 }
 
-#logo-image {
-  opacity: 0;
-}
-
-#kissy {
-  width: 500px;
+.font-lighter {
+  font-weight: lighter;
 }
 
 #navbar, #footer {
   background-color: black;
 }
 
+#logo-image {
+  opacity: 0;
+}
+
+#logo-title {
+  font-size: 30px;
+}
+
 #header {
-  height: 500px;
+  height: 700px;
   background-color: black;
+}
+
+#header-title {
+  font-size: 100px;
+  width: 100%;
+}
+
+/* Desktop support */
+@media(min-width: 1020px) {
+  .intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .intro-pic-container {
+    flex-basis: 20%;
+  }
+  
+  .profile-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #greeting {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .intro-text-container{
+    flex-basis: 70%;
+  }
+}
+
+/* Tablet support */
+@media only screen and (min-width: 750px) and (max-width: 1020px) {
+  .intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .intro-pic-container {
+    flex-basis: 20%;
+  }
+  
+  .profile-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #greeting {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .intro-text-container{
+    flex-basis: 70%;
+  }
+}
+
+/* Mobile support */
+@media only screen and (min-width: 375px) and (max-width: 750px) {
+  #header-title {
+    font-size: 40px;
+    width: 100%;
+  }
+
+  #header {
+    height: 400px;
+  }
+
+  .intro-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .intro-pic-container {
+  }
+  
+  #greeting {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .intro-text-container{
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+}
+
+
+#kissy {
+  width: 500px;
 }
 
 .job-description {
   height: 800px;
 }
 
-.container {
-  height: 100%
+ul.square {
+  list-style-type: square;
 }
 
 #panel-side {
@@ -59,16 +168,22 @@
   height: 150px;
 }
 
-.project {
+.experience-type {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.company-name {
   font-size: 20px;
+  font-weight: bold;
+}
+
+.description-title {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .valign-wrapper {
-  height: 100%;
-}
-
-#header-title {
-  width: 100%;
 }
 
 .parallax-container {

@@ -103,7 +103,6 @@ var counter = 1;
 var headerTitle = $("#header-title");
 logoImage.html(emoji[0]);
 greeting.html(text[0]);
-console.log(greeting);
 headerTitle.html(`${text[0]} ${emoji[0]}`);
 
 setInterval(change, 3000);
