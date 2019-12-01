@@ -1,18 +1,40 @@
 const UICtrl = (function(){
   const UISelectors = {
+    height: '#height',
+    width: '#width',
     homeTab: '#home-tab',
     jobsTab: '#jobs-tab',
     lifeTab: '#life-tab',
-    // carousel: '.carousel',
-    profilePic: '.profile-pic'
+    profilePic: '.profile-pic',
+    companyCard: '.company-card'
   }
 
   return {
     getSelectors: function(){
       return UISelectors;
     },
+    getHeight: function(){
+      return document.querySelector(UISelectors.height);
+    },
+    getWidth: function(){
+      return document.querySelector(UISelectors.width);
+    },
     activateTab: function(tab){
       tab.classList.add("active");
+    },
+    activeCompanyCardMobile: function(){
+      console.log("activate horizontal cards");
+      let companyCards = document.querySelectorAll(UISelectors.companyCard);
+      companyCards.forEach((card) => {
+        card.classList.add("horizontal")
+      });
+    },
+    deactivateCompanyCardMobile: function(){
+      console.log("DEactivate horizontal cards");
+      let companyCards = document.querySelectorAll(UISelectors.companyCard);
+      companyCards.forEach((card) => {
+        card.classList.remove("horizontal")
+      });
     },
     resetTabs: function(){
       document.querySelector(UISelectors.homeTab).parentElement.classList.remove("active");
@@ -24,23 +46,44 @@ const UICtrl = (function(){
 
 const App = (function(UICtrl){
   const UISelectors = UICtrl.getSelectors();
+  const tabletBreakpoint = 992;
+  const mobileBreakpoint = 600;
+  let mobile = false;
+  let tablet = false;
+  let desktop = false;
   const loadEventListeners = function(){
-    /*
-    document.querySelector(UISelectors.homeTab).addEventListener('click', tabClick);
-    document.querySelector(UISelectors.jobsTab).addEventListener('click', tabClick);
-    document.querySelector(UISelectors.lifeTab).addEventListener('click', tabClick);
-    */
+    window.addEventListener('resize', reportWindowSize);
     document.querySelector(UISelectors.profilePic).addEventListener('click', toast);
-    
   } 
-  const tabClick = function(e){
-    UICtrl.resetTabs();
-    UICtrl.activateTab(e.target.parentElement);
-    e.preventDefault();
+
+  const reportWindowSize = function(e) {
+    // console.log(`height: ${window.innerHeight}`);
+    let width = window.innerWidth;
+    console.log(`width: ${width}`);
+    
+    if(width <= mobileBreakpoint && mobile === false){
+      console.log('We hit mobile');
+      mobile = true;
+      tablet = false;
+      desktop = false;
+      UICtrl.activeCompanyCardMobile();
+    } else if (width > mobileBreakpoint && width <= tabletBreakpoint && tablet === false) {
+      console.log('We hit tablet');
+      mobile = false;
+      tablet = true;
+      desktop = false;
+      UICtrl.deactivateCompanyCardMobile();
+    } else if (width > tabletBreakpoint && desktop === false) {
+      console.log('We hit desktop');
+      mobile = false;
+      tablet = false;
+      desktop = true;
+      UICtrl.deactivateCompanyCardMobile();
+    }
   }
 
   const toast = function(e){
-    let suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'sup??', 'GANG GANG'];
+    const suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'sup??', 'GANG GANG', 'GOTTTTIII!!!', 'oooldee time roooad!'];
     let random = Math.floor(Math.random() * suhs.length); 
     M.toast({html: suhs[random], classes: 'toast', displayLength: 2000});
     e.preventDefault();
@@ -50,6 +93,7 @@ const App = (function(UICtrl){
     init: function(){
       // Load event listeners
       loadEventListeners();
+      reportWindowSize();
     }
   }
   
