@@ -143,6 +143,16 @@
     bottom: 10px;
     right: 10px;
   }
+
+  .card.horizontal .card-image {
+    display: flex;
+    align-items: center;
+  }
+
+  .card.horizontal .card-image img {
+    max-width: none;
+    width: 150px;
+  }
   
 }
 
