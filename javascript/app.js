@@ -72,7 +72,7 @@ const App = (function(UICtrl){
       mobile = false;
       tablet = true;
       desktop = false;
-      UICtrl.deactivateCompanyCardMobile();
+      UICtrl.activeCompanyCardMobile();
     } else if (width > tabletBreakpoint && desktop === false) {
       console.log('We hit desktop');
       mobile = false;

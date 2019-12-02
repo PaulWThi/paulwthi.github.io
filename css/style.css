@@ -106,6 +106,21 @@
   .intro-text-container{
     flex-basis: 70%;
   }
+  
+  .btn-floating.btn-large.halfway-fab {
+    bottom: 2px;
+    right: 2px;
+  }
+
+  .card.horizontal .card-image {
+    display: flex;
+    align-items: center;
+  }
+
+  .card.horizontal .card-image img {
+    max-width: none;
+    width: 150px;
+  }
 }
 
 /* Mobile support */
@@ -139,9 +154,9 @@
     margin-right: 40px;
   }
 
-  .mobile.btn-floating.btn-large.halfway-fab {
-    bottom: 10px;
-    right: 10px;
+  .btn-floating.btn-large.halfway-fab {
+    bottom: 2px;
+    right: 2px;
   }
 
   .card.horizontal .card-image {
