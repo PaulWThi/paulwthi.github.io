@@ -6,16 +6,37 @@
   color: #4d4045;
 }
 
+/* BR - Colors */ 
 .br-color {
   background-color: #d2381b;
 }
+.br-color-light {
+  background-color: #c94e35;
+}
+.br-color-dark {
+  background-color: #ac250a;
+}
 
+/* OTDA - Colors */ 
 .otda-color {
   background-color: #432870;
 }
+.otda-color-light {
+  background-color: #57378b;
+}
+.otda-color-dark {
+  background-color: #381d64;
+}
 
+/* DTF - Colors */ 
 .dtf-color {
   background-color: #276875;
+}
+.dtf-color-light {
+  background-color: #3c7d8b;
+}
+.dtf-color-dark {
+  background-color: #1a545f;
 }
 
 #navbar, #footer {
@@ -52,6 +73,10 @@
 }
 
 ul.square li {
+  color: white;
+}
+
+.collapsible-header {
   color: white;
 }
 
@@ -176,7 +201,7 @@ ul.square li {
   }
   
   ul.square li {
-    color: black;
+    color: white;
   }
 
 }
