@@ -113,6 +113,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   const tooltopInstances = M.Tooltip.init(tooltipElems, tooltipOptions);
   
+  // collapsible JS
+  const collapsibleElems = document.querySelectorAll('.collapsible');
+  const collapsibleOptions = {
+  }
+  var collapsibleInstances = M.Collapsible.init(collapsibleElems, collapsibleOptions);
+
 });
 
 App.init();
