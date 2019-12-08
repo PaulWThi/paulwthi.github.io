@@ -99,6 +99,7 @@ const App = (function(UICtrl){
   
 })(UICtrl);
 
+// Load up MaterializeCSS JS
 document.addEventListener('DOMContentLoaded', function() {
 
   // parallax JS
@@ -119,15 +120,43 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   var collapsibleInstances = M.Collapsible.init(collapsibleElems, collapsibleOptions);
 
+  // scrollspy JS
+  const scrollspyElems = document.querySelectorAll('.scrollspy');
+  const scrollspyOptions = {
+  }
+  const scrollspyInstances = M.ScrollSpy.init(scrollspyElems, scrollspyOptions);
+
+  const pushpinElems = document.querySelectorAll('.pushpin');
+  const pushpinOptions = {
+  }
+  const pushpinInstances = M.Pushpin.init(pushpinElems, pushpinOptions);
+  
+  // tap-target JS
+  const tapElems = document.querySelectorAll('.tap-target');
+  const tapOptions = {
+  }
+  const tapInstances = M.TapTarget.init(tapElems, tapOptions);
+  
 });
 
+// Init MaterializeCSS
 App.init();
 
+// Push Pin Function
+$('.table-of-contents').each(function() {
+  var $this = $(this);
+  var $target = $('#' + $(this).attr('data-target'));
+  $this.pushpin({
+    top: $target.offset().top,
+    bottom: $target.offset().top + $target.outerHeight() - $this.height()
+  });
+});
 
-
+/*
 $(document).ready(function() {
   $(".dropdown-trigger").dropdown();
 });
+*/
 
 var header = $('#header');
 var greeting = $('#greeting');

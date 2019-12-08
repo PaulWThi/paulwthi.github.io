@@ -80,6 +80,10 @@ ul.square li {
   color: white;
 }
 
+.table-of-contents {
+  padding-top: 150px;
+}
+
 /* Desktop support */
 @media(min-width: 992px) {
   .desktop-hidden {
@@ -250,6 +254,7 @@ ul.square {
 .experience-type {
   font-size: 40px;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
 .company-name {
@@ -260,9 +265,6 @@ ul.square {
 .description-title {
   font-size: 20px;
   font-weight: bold;
-}
-
-.valign-wrapper {
 }
 
 .parallax-container {
@@ -278,5 +280,21 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.pin-top {
+  position: relative;
+}
+
+.pin-bottom {
+  position: relative;
+}
+
+.pinned {
+  position: fixed !important;
+}
+
+.soju {
+  width: 100%;
 }
     
