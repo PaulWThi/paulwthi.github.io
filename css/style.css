@@ -300,4 +300,13 @@ main {
 blockquote {
   border-left-color: pink;
 }
+
+#footer-links li a{
+  color: white;
+}
+
+#footer-links li a i {
+  font-size: 20px;
+  width: 25px;
+}
     
