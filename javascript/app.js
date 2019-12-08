@@ -137,6 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   const tapInstances = M.TapTarget.init(tapElems, tapOptions);
   
+  // select JS
+  const selectElems = document.querySelectorAll('select');
+  const selectOptions = {
+  }
+  const selectInstances = M.FormSelect.init(selectElems, selectOptions);
+
 });
 
 // Init MaterializeCSS
