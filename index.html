@@ -401,7 +401,7 @@
                   <p><b>But hey! Have some <i>SOJU</i> on me!</b></p>
                   <img class="soju" src="assets/soju-series.jpg">
                   <p class="right"><i>image assets credited to: Zoe Liu</i>
-                  <a href="https://www.linkedin.com/in/syl-zoeliu/" target="_blank" class="btn-floating btn-small waves-effect waves-light pink lighten-3 tooltipped pulse" data-position="bottom" data-tooltip="Checkout more of Zoe's Work!!"><i class="material-icons">face</i></a>
+                  <a href="https://www.linkedin.com/in/syl-zoeliu/" target="_blank" class="btn-floating btn-small waves-effect waves-light pink lighten-2 tooltipped pulse" data-position="bottom" data-tooltip="Checkout more of Zoe's Work!!"><i class="material-icons">face</i></a>
                   </p>
                   <br>
                   <br>
@@ -415,32 +415,35 @@
               <div class="row">
                 <div class="col s12 m12 l12">
                   <div class="card">
-                    <div class="card-content z-depth-3 cyan lighten-4">
+                    <div class="card-content z-depth-3 grey lighten-4">
                       <h5 class="default-grey-text">Input your...</h5>
                       <br>
-                      <form>
+                      <form action="https://getform.io/f/2fabf089-4209-462c-a1ea-fda55a0bcb8a" method="POST">
                         <div class="row">
                           <div class="input-field col s12 m6 l4">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="sender_name" type="text" class="validate">
+                            <input id="sender_name" name="name" type="text" class="validate" required="required">
                             <label for="sender_name">Name</label>
                           </div>
                           <div class="input-field col s12 m6 l4">
                               <i class="material-icons prefix">mail</i>
-                              <input id="sender_email" type="text" class="validate">
+                              <input id="sender_email" name="email" type="text" class="validate" required="required">
                               <label for="sender_email">Email</label>
                           </div>
                           <div class="input-field col s12 m6 l4">
                             <i class="material-icons prefix">phone_iphone</i>
-                            <input id="sender_cell" type="tel" class="validate">
+                            <input id="sender_cell" name="cell" type="tel" class="validate">
                             <label for="sender_cell">Cell</label>
                             <span class="helper-text" data-error="wrong" data-success="right">Optional</span>
                           </div>
                           <div class="input-field col s12">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="textarea" class="materialize-textarea" data-length="120"></textarea>
+                            <textarea id="textarea" name="message" class="materialize-textarea" required="required"></textarea>
                             <label for="textarea">Message</label>
                           </div>
+                          <button class="btn waves-effect waves-light right black" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                          </button>
                         </form>
                       </div>
                     </div>
@@ -452,26 +455,14 @@
         </div>
       </div>
     </div>
-  <!--
-    <div class="container">
-      <div class="col s12 m7">
-          <h2 class="header">Leme give ya a smooth before you leave</h2>
-          <img id="kissy" src="assets/profilekissy.png"></img>
-      </div>
-    </div>
-
-  -->
-
-    
 
     <footer id="footer" class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Site is still under construction:</h5>
+            <h5 class="white-text">Things still in progress:</h5>
             <ul class="browser-default"> 
               <li class="white-text">Education</li>
-              <li class="white-text">Contact Me</li>
               <li class="white-text">Personal Life</li>
             </ul>
             </div>
