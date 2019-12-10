@@ -36,10 +36,20 @@ const UICtrl = (function(){
         card.classList.remove("horizontal")
       });
     },
+    shake: function() {
+      let profilePic = document.querySelector(UISelectors.profilePic);
+      profilePic.classList.add("shake")
+    },
     resetTabs: function(){
       document.querySelector(UISelectors.homeTab).parentElement.classList.remove("active");
       document.querySelector(UISelectors.jobsTab).parentElement.classList.remove("active");
       document.querySelector(UISelectors.lifeTab).parentElement.classList.remove("active");
+    },
+    reset_animation: function() {
+      var el = document.getElementById('animated');
+      el.style.animation = 'none';
+      el.offsetHeight; /* trigger reflow */
+      el.style.animation = null; 
     }
   }
 })();
@@ -83,9 +93,11 @@ const App = (function(UICtrl){
   }
 
   const toast = function(e){
-    const suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'sup??', 'GANG GANG', 'GOTTTTIII!!!', 'oooldee time roooad!'];
+    const suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'GANG GANG', 'GOTTTTIII!!!', 'oooldee time roooad!', 'MENDOKUSAII...', 'なに?!'];
     let random = Math.floor(Math.random() * suhs.length); 
     M.toast({html: suhs[random], classes: 'toast', displayLength: 2000});
+    UICtrl.shake();
+    UICtrl.reset_animation();
     e.preventDefault();
   }
 

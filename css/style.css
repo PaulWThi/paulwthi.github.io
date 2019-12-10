@@ -309,4 +309,44 @@ blockquote {
   font-size: 16px;
   width: 18px;
 }
-    
+
+#soju-div {
+  background-color: chartreuse;
+  align-content: right;
+}
+
+#soju-img {
+  height: 50px;
+  animation-name: spin;
+  animation-duration: .25s;
+  position: relative;
+  animation-iteration-count: infinite;
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: .5s;
+  position: relative;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shake {
+  0% {right: 0px; top: 0px; transform: rotate(0deg)}
+  25% {right: 0px; top: 0px; transform: rotate(20deg)}
+  50% {right: 0px; top: 0px; transform: rotate(0deg)}
+  50% {right: 0px; top: 0px; transform: rotate(-20deg)}
+  100% {right: 0px; top: 0px; transform: rotate(0deg)}
+}
+
+@keyframes cheers {
+  0% {right: 0px; top: 0px; transform: rotate(0deg)}
+  50% {right: -150px; top: -50px; transform: rotate(-20deg)}
+  100% {right: 0px; top: 0px; transform: rotate(0deg)}
+}
+
+@keyframes spin {
+  25% {transform: rotate(-20deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(20deg);}
+  100% {transform: rotate(0deg);}
+}
