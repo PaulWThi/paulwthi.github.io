@@ -6,6 +6,10 @@
   color: #4d4045;
 }
 
+h5 {
+  font-weight: bold;
+}
+
 /* BR - Colors */ 
 .br-color {
   background-color: #d2381b;
@@ -269,6 +273,11 @@ ul.square {
 
 .parallax-container {
   height: 500px;
+}
+
+.skill-image {
+  height: 100px;
+  max-width: 100%;
 }
 
 body {
