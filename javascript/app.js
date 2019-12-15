@@ -46,10 +46,8 @@ const UICtrl = (function(){
       fabDiv.classList.remove('tooltipped');
       if(fabOpen === false) {
         console.log('true so change to bop');
-        // fabButton.setAttribute('data-tooltip', 'Bop');
       } else {
         console.log('true so change to original');
-        // fabButton.setAttribute('data-tooltip', 'Click to navigate somewhere else!');
       }
       console.log(`open? ${fabOpen}`);
     },
@@ -96,7 +94,7 @@ const App = (function(UICtrl){
   const loadEventListeners = function(){
     window.addEventListener('resize', reportWindowSize);
     let profilePic = document.querySelector(UISelectors.profilePic)
-    if (profilePic) {
+    if(profilePic) {
       profilePic.addEventListener('click', toast);
     }
     document.querySelector(UISelectors.fabButton).addEventListener('click', fabTapped);
