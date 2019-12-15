@@ -6,7 +6,9 @@ const UICtrl = (function(){
     jobsTab: '#jobs-tab',
     lifeTab: '#life-tab',
     profilePic: '.profile-pic',
-    companyCard: '.company-card'
+    companyCard: '.company-card',
+    fabButton: '#fab-btn',
+    fabDiv: '#fab-div'
   }
 
   return {
@@ -22,6 +24,35 @@ const UICtrl = (function(){
     activateTab: function(tab){
       tab.classList.add("active");
     },
+    animateFab: function(){
+      let fabButton = document.querySelector(UISelectors.fabButton);
+      let fabDiv = document.querySelector(UISelectors.fabDiv);
+      let fabInstance = M.FloatingActionButton.getInstance(fabDiv)
+      let fabOpen = fabInstance.isOpen
+      fabButton.classList.remove('squared');
+      fabButton.classList.remove('circled');
+      if(fabOpen === false) {
+        fabButton.classList.add('squared');
+      } else {
+        fabButton.classList.add('circled');
+      }
+    },
+    changeFabToolTip: function(){
+      let fabButton = document.querySelector(UISelectors.fabButton);
+      let fabDiv = document.querySelector(UISelectors.fabDiv);
+      let fabInstance = M.FloatingActionButton.getInstance(fabDiv)
+      let fabOpen = fabInstance.isOpen
+      fabDiv.removeAttribute('data-tooltip');
+      fabDiv.classList.remove('tooltipped');
+      if(fabOpen === false) {
+        console.log('true so change to bop');
+        // fabButton.setAttribute('data-tooltip', 'Bop');
+      } else {
+        console.log('true so change to original');
+        // fabButton.setAttribute('data-tooltip', 'Click to navigate somewhere else!');
+      }
+      console.log(`open? ${fabOpen}`);
+    },
     activeCompanyCardMobile: function(){
       console.log("activate horizontal cards");
       let companyCards = document.querySelectorAll(UISelectors.companyCard);
@@ -30,26 +61,27 @@ const UICtrl = (function(){
       });
     },
     deactivateCompanyCardMobile: function(){
-      console.log("DEactivate horizontal cards");
+      console.log('DEactivate horizontal cards');
       let companyCards = document.querySelectorAll(UISelectors.companyCard);
       companyCards.forEach((card) => {
-        card.classList.remove("horizontal")
+        card.classList.remove('horizontal')
       });
     },
-    shake: function() {
-      let profilePic = document.querySelector(UISelectors.profilePic);
-      profilePic.classList.add("shake")
+    shake: function(element) {
+      // let profilePic = document.querySelector(UISelectors.profilePic);
+      element.classList.add('shake')
     },
     resetTabs: function(){
       document.querySelector(UISelectors.homeTab).parentElement.classList.remove("active");
       document.querySelector(UISelectors.jobsTab).parentElement.classList.remove("active");
       document.querySelector(UISelectors.lifeTab).parentElement.classList.remove("active");
     },
-    reset_animation: function() {
-      var el = document.getElementById('animated');
-      el.style.animation = 'none';
-      el.offsetHeight; /* trigger reflow */
-      el.style.animation = null; 
+    reset_animation: function(element) {
+      console.log(`resetting: ${element}`)
+      console.log(element)
+      element.style.animation = 'none';
+      element.offsetHeight; /* trigger reflow */
+      element.style.animation = null; 
     }
   }
 })();
@@ -63,7 +95,11 @@ const App = (function(UICtrl){
   let desktop = false;
   const loadEventListeners = function(){
     window.addEventListener('resize', reportWindowSize);
-    document.querySelector(UISelectors.profilePic).addEventListener('click', toast);
+    let profilePic = document.querySelector(UISelectors.profilePic)
+    if (profilePic) {
+      profilePic.addEventListener('click', toast);
+    }
+    document.querySelector(UISelectors.fabButton).addEventListener('click', fabTapped);
   } 
 
   const reportWindowSize = function(e) {
@@ -96,9 +132,18 @@ const App = (function(UICtrl){
     const suhs = ['SUH?', 'kamaown!!', 'Hello there sir', '👀👀', '💯💯💯', '🙏', 'GANG GANG', 'GOTTTTIII!!!', 'oooldee time roooad!', 'MENDOKUSAII...', 'なに?!'];
     let random = Math.floor(Math.random() * suhs.length); 
     M.toast({html: suhs[random], classes: 'toast', displayLength: 2000});
-    UICtrl.shake();
-    UICtrl.reset_animation();
+    UICtrl.shake(e.target);
+    UICtrl.reset_animation(e.target);
     e.preventDefault();
+  }
+
+  const fabTapped = function(e){
+    console.log('FAB Tapped');
+    UICtrl.shake(e.target);
+    UICtrl.animateFab();
+    UICtrl.reset_animation(e.target);
+    UICtrl.reset_animation(e.target.parentElement);
+    // UICtrl.changeFabToolTip()
   }
 
   return {
@@ -154,6 +199,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const selectOptions = {
   }
   const selectInstances = M.FormSelect.init(selectElems, selectOptions);
+
+  const sideNavElems = document.querySelectorAll('.sidenav');
+  const sideNavOptions = {
+  }
+  const sideNavInstances = M.Sidenav.init(sideNavElems, sideNavOptions);
+
+  const modalElems = document.querySelectorAll('.modal');
+  const modalOptions = {
+  }
+  const modalInstances = M.Modal.init(modalElems, modalOptions);
+  
+  const fixedBtnElems = document.querySelectorAll('.fixed-action-btn');
+  const fixedBtnOptions = {
+    // direction: 'left'
+    hoverEnabled: false
+  }
+  const fixedBtnInstances = M.FloatingActionButton.init(fixedBtnElems, fixedBtnOptions);
+  const instance = M.FloatingActionButton.getInstance(fixedBtnElems);
+  // console.log(`ay ay ay: ${fixedBtnInstances.isOpen}`);
 
 });
 

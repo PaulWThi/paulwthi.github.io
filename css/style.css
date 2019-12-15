@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 #introduction {
   font-size: 15px;
 }
@@ -236,6 +240,12 @@ ul.square {
   border-color: black;
 }
 
+.profile-pic-mini {
+  border-style: solid;
+  border-width: 2px;
+  border-color: white
+}
+
 .profile-pic {
   height: 200px;
   width: 200px;
@@ -332,11 +342,37 @@ blockquote {
   animation-iteration-count: infinite;
 }
 
+#soju-img-fab {
+  height: 50px;
+  top: 4px;
+  animation-name: spin;
+  animation-duration: .25s;
+  position: relative;
+  animation-iteration-count: infinite;
+}
+
 .shake {
   animation-name: shake;
   animation-duration: .5s;
   position: relative;
   animation-timing-function: ease-in-out;
+}
+
+.squared {
+  animation-name: squared;
+  animation-duration: .35s;
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.circled {
+  animation-name: squared;
+  animation-duration: .35s;
+  animation-direction: reverse;
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 @keyframes shake {
@@ -345,6 +381,11 @@ blockquote {
   50% {right: 0px; top: 0px; transform: rotate(0deg)}
   50% {right: 0px; top: 0px; transform: rotate(-20deg)}
   100% {right: 0px; top: 0px; transform: rotate(0deg)}
+}
+
+@keyframes squared {
+  0% { border-radius: 50%}
+  100% { border-radius: 0%};
 }
 
 @keyframes cheers {
