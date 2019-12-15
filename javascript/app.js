@@ -76,8 +76,6 @@ const UICtrl = (function(){
       document.querySelector(UISelectors.lifeTab).parentElement.classList.remove("active");
     },
     reset_animation: function(element) {
-      console.log(`resetting: ${element}`)
-      console.log(element)
       element.style.animation = 'none';
       element.offsetHeight; /* trigger reflow */
       element.style.animation = null; 

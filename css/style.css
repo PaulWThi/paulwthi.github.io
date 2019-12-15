@@ -415,20 +415,27 @@ blockquote {
   animation-fill-mode: backwards;
 }
 
+.squared {
+  animation-name: squared;
+  animation-duration: .35s;
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 .circled {
   animation-name: squared;
   animation-duration: .35s;
-  animation-direction: reverse;
   position: relative;
   animation-timing-function: ease-out;
-  animation-fill-mode: backwards;
+  animation-direction: reverse;
 }
 
 @keyframes shake {
   0% {right: 0px; top: 0px; transform: rotate(0deg)}
-  25% {right: 0px; top: 0px; transform: rotate(20deg)}
+  25% {right: 0px; top: 0px; transform: rotate(25deg)}
   50% {right: 0px; top: 0px; transform: rotate(0deg)}
-  50% {right: 0px; top: 0px; transform: rotate(-20deg)}
+  50% {right: 0px; top: 0px; transform: rotate(-25deg)}
   100% {right: 0px; top: 0px; transform: rotate(0deg)}
 }
 
