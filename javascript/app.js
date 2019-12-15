@@ -49,7 +49,6 @@ const UICtrl = (function(){
       } else {
         console.log('true so change to original');
       }
-      console.log(`open? ${fabOpen}`);
     },
     activeCompanyCardMobile: function(){
       console.log("activate horizontal cards");
@@ -66,8 +65,10 @@ const UICtrl = (function(){
       });
     },
     shake: function(element) {
-      // let profilePic = document.querySelector(UISelectors.profilePic);
       element.classList.add('shake')
+    },
+    rotate: function(element) {
+      element.classList.add('rotate')
     },
     resetTabs: function(){
       document.querySelector(UISelectors.homeTab).parentElement.classList.remove("active");

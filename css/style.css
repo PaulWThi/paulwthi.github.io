@@ -329,6 +329,48 @@ blockquote {
   width: 18px;
 }
 
+#bank-of-china1 {
+  height: 1%;
+  width: 1%
+}
+#bank-of-china2 {
+  height: 2%;
+  width: 2%
+}
+#bank-of-china3 {
+  height: 3%;
+  width: 3%
+}
+#bank-of-china4 {
+  height: 4%;
+  width: 4%
+}
+#bank-of-china5 {
+  height: 5%;
+  width: 5%
+}
+#bank-of-china6 {
+  height: 6%;
+  width: 6%
+}
+#bank-of-china7 {
+  height: 7%;
+  width: 7%
+}
+#bank-of-china8 {
+  height: 8%;
+  width: 8%
+}
+#bank-of-china9 {
+  height: 9%;
+  width: 9%
+}
+#bank-of-china10 {
+  height: 10%;
+  width: 10%
+}
+
+
 #soju-div {
   background-color: chartreuse;
   align-content: right;
@@ -358,12 +400,19 @@ blockquote {
   animation-timing-function: ease-in-out;
 }
 
-.squared {
-  animation-name: squared;
-  animation-duration: .35s;
+.shake {
+  animation-name: shake;
+  animation-duration: .5s;
+  position: relative;
+  animation-timing-function: ease-in-out;
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-duration: .5s;
   position: relative;
   animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
 }
 
 .circled {
@@ -381,6 +430,11 @@ blockquote {
   50% {right: 0px; top: 0px; transform: rotate(0deg)}
   50% {right: 0px; top: 0px; transform: rotate(-20deg)}
   100% {right: 0px; top: 0px; transform: rotate(0deg)}
+}
+
+@keyframes rotate {
+  0% {right: 0px; top: 0px; transform: rotate(0deg)}
+  100% {right: 0px; top: 0px; transform: rotate(360deg)}
 }
 
 @keyframes squared {
