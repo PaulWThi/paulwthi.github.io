@@ -216,6 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const instance = M.FloatingActionButton.getInstance(fixedBtnElems);
   // console.log(`ay ay ay: ${fixedBtnInstances.isOpen}`);
 
+  const dateElems = document.querySelectorAll('.datepicker');
+  const dateOptions = {
+  }
+  const dateInstances = M.Datepicker.init(dateElems, dateOptions);
+
 });
 
 // Init MaterializeCSS

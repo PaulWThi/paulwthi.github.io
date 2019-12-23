@@ -431,6 +431,10 @@ blockquote {
   animation-direction: reverse;
 }
 
+.datepicker-controls .select-month input {
+    width: 85px;
+}
+
 @keyframes shake {
   0% {right: 0px; top: 0px; transform: rotate(0deg)}
   25% {right: 0px; top: 0px; transform: rotate(25deg)}
