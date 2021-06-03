@@ -14,6 +14,17 @@ h5 {
   font-weight: bold;
 }
 
+/* Dialexa - Colors */ 
+.dlxa-color {
+  background-color: #d7b26c;
+}
+.dlxa-color-light {
+  background-color: #e9bf72;
+}
+.dlxa-color-dark {
+  background-color: #a38855;
+}
+
 /* BR - Colors */ 
 .br-color {
   background-color: #d2381b;
