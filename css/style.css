@@ -14,6 +14,17 @@ h5 {
   font-weight: bold;
 }
 
+/* Coinsource - Colors */ 
+.cs-color {
+  background-color: #02365b;
+}
+.cs-color-light {
+  background-color: #064b7d;
+}
+.cs-color-dark {
+  background-color: #022741;
+}
+
 /* Dialexa - Colors */ 
 .dlxa-color {
   background-color: #d7b26c;
