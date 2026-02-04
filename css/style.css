@@ -417,52 +417,52 @@ main {
   width: 18px;
 }
 
-#bank-of-china1 {
+.bank-of-china1 {
   height: 1%;
   width: 1%
 }
 
-#bank-of-china2 {
+.bank-of-china2 {
   height: 2%;
   width: 2%
 }
 
-#bank-of-china3 {
+.bank-of-china3 {
   height: 3%;
   width: 3%
 }
 
-#bank-of-china4 {
+.bank-of-china4 {
   height: 4%;
   width: 4%
 }
 
-#bank-of-china5 {
+.bank-of-china5 {
   height: 5%;
   width: 5%
 }
 
-#bank-of-china6 {
+.bank-of-china6 {
   height: 6%;
   width: 6%
 }
 
-#bank-of-china7 {
+.bank-of-china7 {
   height: 7%;
   width: 7%
 }
 
-#bank-of-china8 {
+.bank-of-china8 {
   height: 8%;
   width: 8%
 }
 
-#bank-of-china9 {
+.bank-of-china9 {
   height: 9%;
   width: 9%
 }
 
-#bank-of-china10 {
+.bank-of-china10 {
   height: 10%;
   width: 10%
 }
@@ -481,7 +481,7 @@ main {
   animation-iteration-count: infinite;
 }
 
-#soju-img-fab {
+.soju-img-fab {
   height: 50px;
   top: 4px;
   animation-name: spin;

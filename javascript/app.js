@@ -213,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
     hoverEnabled: false
   }
   const fixedBtnInstances = M.FloatingActionButton.init(fixedBtnElems, fixedBtnOptions);
-  const instance = M.FloatingActionButton.getInstance(fixedBtnElems);
+  const fixedBtnElem = fixedBtnElems.length > 0 ? fixedBtnElems[0] : null;
+  const instance = fixedBtnElem ? M.FloatingActionButton.getInstance(fixedBtnElem) : null;
   // console.log(`ay ay ay: ${fixedBtnInstances.isOpen}`);
 
   const dateElems = document.querySelectorAll('.datepicker');
