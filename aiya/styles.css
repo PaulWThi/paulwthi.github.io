@@ -310,16 +310,19 @@ img {
 
 .window-main {
   padding: 18px;
+  min-width: 0;
 }
 
 .pane-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.95fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
   gap: 14px;
+  min-width: 0;
 }
 
 .pane {
   min-height: 164px;
+  min-width: 0;
   padding: 16px;
   border-radius: 22px;
   background: var(--surface-soft);
@@ -330,6 +333,7 @@ img {
 .install-card pre {
   margin: 0;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
   font-family: var(--mono);
   font-size: 0.92rem;
   line-height: 1.65;
@@ -341,6 +345,7 @@ img {
   list-style: none;
   display: grid;
   gap: 10px;
+  min-width: 0;
   color: var(--text-muted);
 }
 
