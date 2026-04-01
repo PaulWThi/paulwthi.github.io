@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>aiya | Native macOS terminal multiplexer</title>
+  <meta
+    name="description"
+    content="aiya is a native macOS terminal multiplexer for development workflows, powered by Ghostty, worktrees, and Git-aware tooling."
+  >
+  <link rel="icon" href="./icon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./">
+        <img src="./icon.png" alt="aiya app icon">
+        <span>aiya</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/PaulWThi/aiya">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Native macOS terminal multiplexer</p>
+          <h1>Run code, worktrees, and Git context in one calm command deck.</h1>
+          <p class="hero-text">
+            aiya is a Ghostty-powered desktop terminal built for development workflows:
+            split panes, project-aware navigation, Git diffs, notifications, and isolated
+            worktree builds that can run side by side without stepping on each other.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/PaulWThi/aiya/releases">Download for macOS</a>
+            <a class="button button-secondary" href="https://github.com/PaulWThi/aiya">View Source</a>
+          </div>
+          <ul class="hero-facts" aria-label="Platform facts">
+            <li>macOS 26+</li>
+            <li>Apple Silicon</li>
+            <li>Ghostty-backed rendering</li>
+          </ul>
+        </div>
+
+        <div class="hero-panel" aria-label="aiya interface preview">
+          <div class="window-chrome">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="window-body">
+            <aside class="window-sidebar">
+              <p class="sidebar-label">Projects</p>
+              <div class="project-card project-card-active">
+                <strong>aiya</strong>
+                <span>main</span>
+              </div>
+              <div class="project-card">
+                <strong>ghosttykit</strong>
+                <span>feature/pinned-build</span>
+              </div>
+              <div class="project-card">
+                <strong>docs</strong>
+                <span>website</span>
+              </div>
+            </aside>
+            <div class="window-main">
+              <div class="pane-grid">
+                <section class="pane pane-terminal">
+                  <p class="pane-title">Terminal</p>
+                  <pre><code>$ git status --short
+ M .github/workflows/build.yml
+ M docs/index.html
+
+$ ./scripts/local_build_export.sh --no-run
+** BUILD SUCCEEDED **</code></pre>
+                </section>
+                <section class="pane pane-diff">
+                  <p class="pane-title">Changes</p>
+                  <ul>
+                    <li><span class="change change-add">+12</span> docs/index.html</li>
+                    <li><span class="change change-add">+1</span> docs/styles.css</li>
+                    <li><span class="change change-mod">~3</span> README.md</li>
+                  </ul>
+                </section>
+                <section class="pane pane-note">
+                  <p class="pane-title">Session note</p>
+                  <p>
+                    Each worktree gets its own app name, bundle ID, and DerivedData path,
+                    so multiple local builds can stay open at the same time.
+                  </p>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">What’s in the app</p>
+          <h2>Built for active development, not just terminal nostalgia.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Split-pane terminal rendering</h3>
+            <p>Ghostty-backed panes with drag-and-drop layout control and room for parallel work.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Project-aware sidebar</h3>
+            <p>Keep projects, worktrees, and top-level context visible without living in separate windows.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Git diff visibility</h3>
+            <p>Track status, changes, and worktree state alongside the code you are editing.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Desktop notifications</h3>
+            <p>Get alerted when something important happens instead of polling terminals by hand.</p>
+          </article>
+          <article class="feature-card">
+            <h3>In-app observability</h3>
+            <p>Structured logs, a debug console, and internal tooling for understanding what the app is doing.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Worktree-safe builds</h3>
+            <p>Per-worktree product names, bundle IDs, and DerivedData keep parallel builds isolated.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow-section" id="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>One app, three layers of context.</h2>
+        </div>
+        <div class="workflow-grid">
+          <article>
+            <span class="workflow-step">01</span>
+            <h3>Run terminals side by side</h3>
+            <p>Keep build output, editor-adjacent shell work, and Git commands visible at the same time.</p>
+          </article>
+          <article>
+            <span class="workflow-step">02</span>
+            <h3>Track the repo while you work</h3>
+            <p>Use the sidebar, changes panel, and diff view to stay anchored in project state.</p>
+          </article>
+          <article>
+            <span class="workflow-step">03</span>
+            <h3>Keep worktrees isolated</h3>
+            <p>Spin up multiple builds without name collisions, bundle ID conflicts, or shared DerivedData churn.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="install-section" id="install">
+        <div class="section-heading">
+          <p class="eyebrow">Install</p>
+          <h2>Use a release or build it locally.</h2>
+        </div>
+        <div class="install-grid">
+          <article class="install-card">
+            <h3>Download</h3>
+            <p>Grab the latest app build from GitHub Releases.</p>
+            <a class="text-link" href="https://github.com/PaulWThi/aiya/releases">Open Releases</a>
+            <p class="small-note">
+              If macOS blocks first launch, right-click the app and choose <strong>Open</strong>, or use
+              <strong>System Settings &gt; Privacy &amp; Security &gt; Open Anyway</strong>.
+            </p>
+          </article>
+          <article class="install-card">
+            <h3>Build from source</h3>
+            <pre><code>./scripts/fetch-ghosttykit.sh
+./scripts/fetch-ghostty-resources.sh
+./scripts/local_build_export.sh</code></pre>
+            <a class="text-link" href="https://github.com/PaulWThi/aiya">Browse the repository</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built by <a href="https://github.com/PaulWThi">PaulWThi</a>.</p>
+      <p><a href="https://github.com/PaulWThi/aiya">GitHub</a> <span>·</span> <a href="https://github.com/PaulWThi/aiya/releases">Releases</a></p>
+    </footer>
+  </div>
+</body>
+</html>
